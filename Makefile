@@ -1,10 +1,22 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/04/24 21:41:41 by xuwang            #+#    #+#              #
+#    Updated: 2021/04/24 21:41:44 by xuwang           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
-SRC :=  ft_atoi.c \
+SRCS :=  ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_isalnum.c \
@@ -39,14 +51,16 @@ SRC :=  ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c
 
+OBJS = $(SRCS:.c=.o)
+
 $(NAME):
-	$(CC) -c $(FLAGS) $(SRC)
-	ar rc $(NAME) *.o
+	$(CC) -c $(FLAGS) $(SRCS)
+	ar rc $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	rm -f *.o
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
