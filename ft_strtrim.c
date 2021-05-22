@@ -6,37 +6,22 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:42:24 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:42:25 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/21 16:17:42 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	is_set(char c, const char *str)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
+	int	len;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i++] == c)
-			return (1);
-	}
-	return (0);
-}
-
-
-char *ft_strtrim(char const *s1, char const *set)
-{
-	int i;
-	int len;
-
-	i = 0;
 	if (!s1 || !set)
 		return (NULL);
-	while (s1[i] && is_set(s1[i], set))
-		i++;
-	len = ft_strlen(s1) - 1;
-	while (len && is_set(s1[len], set))
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len]))
 		len--;
-	return (ft_substr(s1, i, (len - i) + 1));
+	return (ft_substr((char *)s1, 0, len + 1));
 }

@@ -6,22 +6,22 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:43:12 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:43:13 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/20 17:39:43 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count(char const *s, char c)
+static int	count(char const *s, char c)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (*s)
 	{
-		while (*s&& *s == c)
+		while (*s && *s == c)
 			s++;
-		if (*s && *s != c)	
+		if (*s && *s != c)
 			i++;
 		while (*s && *s != c)
 			s++;
@@ -29,10 +29,10 @@ int	ft_count(char const *s, char c)
 	return (i);
 }
 
-char *malloc_s(char const *s, char c)
+static char	*malloc_s(char const *s, char c)
 {
-	char *dst;
-	int i;
+	char	*dst;
+	int		i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -44,20 +44,21 @@ char *malloc_s(char const *s, char c)
 	while (s[i] && s[i] != c)
 	{
 		dst[i] = s[i];
-		i++; 
+		i++;
 	}
 	dst[i] = '\0';
 	return (dst);
 }
-char **ft_split(char const *s, char c)
+
+char	**ft_split(char const *s, char c)
 {
-	char **tab;
-	int i;
+	char	**tab;
+	int		i;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char*) * ft_count(s, c) + 1);
+	tab = (char **)malloc(sizeof(char *) * count(s, c) + 1);
 	if (!tab)
 		return (NULL);
 	while (*s)
@@ -66,7 +67,7 @@ char **ft_split(char const *s, char c)
 			s++;
 		if (*s && *s != c)
 		{
-			tab[i] = malloc_s(s, c); 
+			tab[i] = malloc_s(s, c);
 			i++;
 			while (*s && *s != c)
 				s++;

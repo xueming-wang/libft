@@ -6,20 +6,20 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:43:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:43:36 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/20 14:39:23 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	void *tmp;
+	void	*tmp;
 
 	tmp = b;
-	while(len)
+	while (len)
 	{
-		*(unsigned char*)b++ = (unsigned char)c;
+		*(unsigned char *) b++ = (unsigned char) c;
 		len--;
 	}
 	return (tmp);

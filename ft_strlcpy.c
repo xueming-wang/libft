@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:42:51 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:42:52 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/21 15:25:55 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
 
-	j = 0;
-	i = 0;	
-	while (src[j])
-		j++;
-	while (src[i] && i < dstsize - 1)
+	if (!dst || !src)
+		return (0);
+	i = ft_strlen(src);
+	if (i + 1 < dstsize)
+		ft_memcpy(dst, src, i + 1);
+	else if (dstsize > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	dst[i] = '\0';
-	return (j);
+	return (i);
 }

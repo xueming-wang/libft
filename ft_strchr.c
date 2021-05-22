@@ -6,15 +6,15 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:43:05 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:43:06 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/20 14:44:13 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])

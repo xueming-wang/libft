@@ -6,32 +6,11 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:43:38 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:43:39 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/21 16:49:03 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-** copies len bytes from src to dst.
-** The two strings may overlap.
-** The copy is always done in a non-destructive manner.
-*/
-
-/*void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-
-	if (!dst && !src)
-		return (NULL);
-	if (dst < src)
-		ft_memcpy(dst, src, len);
-	else
-	{
-		while (len-- > 0)
-			((unsigned char*)dst)[len] = ((unsigned char*)src)[len];
-	}
-	return (dst);
-}*/
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

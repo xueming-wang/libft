@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:42:44 by xuwang            #+#    #+#             */
-/*   Updated: 2021/04/24 21:42:45 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/21 15:42:20 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *dst;
-	unsigned int len;
+	char			*dst;
+	unsigned int	len;
 
 	if (!s)
 		return (NULL);
@@ -28,4 +28,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		dst[len] = (*f)(len, s[len]);
 	return (dst);
 }
-
