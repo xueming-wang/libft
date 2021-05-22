@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 21:42:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/22 20:06:19 by xuwang           ###   ########.fr       */
+/*   Created: 2021/05/22 20:29:10 by xuwang            #+#    #+#             */
+/*   Updated: 2021/05/22 21:17:14 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new;
 
-	i = ft_strlen(s) + 1;
-	while (i--)
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new)
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		new->content = content;
+		new->next = NULL;
 	}
-	return (NULL);
+	return (new);
 }

@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/24 21:41:41 by xuwang            #+#    #+#              #
-#    Updated: 2021/05/21 16:13:29 by xuwang           ###   ########.fr        #
+#    Updated: 2021/05/22 22:48:46 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,18 @@ SRCS :=  ft_atoi.c \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \
-	ft_toupper.c
-
+	ft_toupper.c \
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
+	
+	
 OBJS = $(SRCS:.c=.o)
 
 $(NAME):

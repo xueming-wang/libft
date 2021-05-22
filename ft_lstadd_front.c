@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 21:42:28 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/22 20:06:19 by xuwang           ###   ########.fr       */
+/*   Created: 2021/05/22 20:41:34 by xuwang            #+#    #+#             */
+/*   Updated: 2021/05/22 20:44:14 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	size_t	i;
-
-	i = ft_strlen(s) + 1;
-	while (i--)
-	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-	}
-	return (NULL);
+    if (*alst)
+        new->next = *alst;
+    *alst = new;
 }
