@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 20:50:08 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/22 20:54:10 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/23 12:13:16 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if(lst)
-    	{
-        	while (lst->next != NULL)
-            	lst = lst->next;
-    	}
-    	return (lst);
+	if (lst)
+	{
+		while (lst->next != NULL)
+			lst = lst->next;
+	}
+	return (lst);
 }

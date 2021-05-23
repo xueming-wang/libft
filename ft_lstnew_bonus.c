@@ -6,12 +6,12 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 20:29:10 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/22 21:17:14 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/23 17:34:08 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <libc.h>
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
@@ -24,3 +24,4 @@ t_list	*ft_lstnew(void *content)
 	}
 	return (new);
 }
+
