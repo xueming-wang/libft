@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/24 21:41:41 by xuwang            #+#    #+#              #
-#    Updated: 2021/05/22 23:25:03 by xuwang           ###   ########.fr        #
+#    Updated: 2021/06/11 15:01:04 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ SRCS :=  ft_atoi.c \
 OBJS = $(SRCS:.c=.o)
 
 $(NAME):
-	$(CC) -c $(FLAGS) $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS)
 	ar rc $(NAME) $(OBJS)
 
 all: $(NAME)

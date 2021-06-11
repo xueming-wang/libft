@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 21:42:18 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/22 15:44:17 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/05/25 16:54:01 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*tab;
 	size_t	i;
+	size_t	s_len;
 
-	i = 0;
 	if (!s)
 		return (NULL);
+	s_len = ft_strlen(s);
 	tab = (char *)malloc(sizeof(char) * len + 1);
 	if (!tab)
 		return (NULL);
-	while (i < len && ft_strlen(s) >= start)
-		tab[i++] = s[start++];
+	i = 0;
+	while (i < len && s_len >= start)
+	{
+		tab[i] = s[start + i];
+		++i;
+	}
 	tab[i] = '\0';
 	return (tab);
 }
